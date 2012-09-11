@@ -1,0 +1,1 @@
+Primera version Soxialit, startup de fashion Mexico.
