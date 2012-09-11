@@ -1,4 +1,10 @@
 Soxialit::Application.routes.draw do
+  get "static_pages/home"
+
+  get "static_pages/random"
+
+  get "static_pages/feedback"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
