@@ -1,9 +1,13 @@
 Soxialit::Application.routes.draw do
-  get "static_pages/home"
+  get "users/new"
 
-  get "static_pages/random"
-
-  get "static_pages/feedback"
+  root to: 'static_pages#home'
+  
+  match '/feedback', to: 'static_pages#feedback'
+  match '/random', to: 'static_pages#random'
+  match '/ingresar', to: 'users#new'
+  
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
