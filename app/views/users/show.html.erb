@@ -1,2 +1,12 @@
 <% provide(:title, @user.name) %>
-<h1><%= @user.name %></h1>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= @user.name %>
+      </h1>
+		<%= image_tag(@user.picture_url, :width =>200) if @user.picture.present? %>
+		
+    </section>
+  </aside>
+</div>

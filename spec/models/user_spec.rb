@@ -3,9 +3,7 @@ require 'spec_helper'
 describe User do
 
   before do
-    @user = User.new(name: "Example User", email: "user@example.com", 
-    description:"Texto para especificar el usuario", picture:"asdasddaswedada", 
-    password: "foobar", password_confirmation:"foobar") 
+    @user = User.new(name: "Example User", email: "user@example.com", description:"Texto para especificar el usuario", picture:"aswedada", password: "foobar", password_confirmation:"foobar") 
   end
 
   subject { @user }
@@ -15,9 +13,9 @@ describe User do
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
-  it { should respond_to(:description)}
-  it { should respond_to(:picture)}
-  it { should respond_to(:authenticate)}
+  it { should respond_to(:description) }
+  it { should respond_to(:picture) }
+  it { should respond_to(:authenticate) }
   
   it { should be_valid}
   
@@ -36,10 +34,10 @@ describe User do
         it {should_not be_valid}
       end
   
-        describe "when picture is not presence" do
-          before { @user.picture = " "}
+      describe "when picture is not presence" do
+          before { @user.picture = ""}
           it {should_not be_valid}
-        end
+        end 
   
   describe "when name is too long" do
     before { @user.name = "a" * 51 }
@@ -81,6 +79,7 @@ describe User do
 
          it { should_not be_valid }
        end
+       
        describe "when password is not present" do
            before { @user.password = @user.password_confirmation = " " }
            it { should_not be_valid }
@@ -95,6 +94,7 @@ describe User do
            before { @user.password_confirmation = nil }
            it { should_not be_valid }
          end
+          
          describe "with a password that's too short" do
             before { @user.password = @user.password_confirmation = "a" * 5 }
             it { should be_invalid }
