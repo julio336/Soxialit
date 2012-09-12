@@ -8,12 +8,25 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(params[:user])
-    if @user.save
-        flash[:success] = "Welcome to Soxialit!"
+      @user = User.new(params[:user])
+      if @user.save
+        sign_in @user
+        flash[:success] = "Welcome to the Sample App!"
         redirect_to @user
       else
         render 'new'
       end
-    end
+  end
+    
+  def edit
+      @user = User.find(params[:id])
+  end
+    
+  def update
+      @user = User.find(params[:id])
+      @user.update_attributes(params[:user])
+      
+      redirect_to @user, notice: "Successful updated"
+  end
+      
 end

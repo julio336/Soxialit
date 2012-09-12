@@ -8,5 +8,6 @@ FactoryGirl.define do
     password_confirmation "foobar"
     description "Texto de los diseadores"
     picture { fixture_file_upload(Rails.root.join(*%w[spec fixtures files example.jpg]), 'image/jpg') }
+  
   end
 end

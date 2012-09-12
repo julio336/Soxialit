@@ -1,0 +1,24 @@
+<%= form_for(@user, :html=> {:multipart => true}) do |f| %>
+     <%= render 'shared/error_messages' %>
+
+     <%= f.label :name %>
+     <%= f.text_field :name %>
+
+     <%= f.label :email %>
+     <%= f.text_field :email %>
+
+	 <%= f.label :picture %>
+     <%= f.file_field :picture %>
+
+	 <%= f.label :description %>
+     <%= f.text_field :description %>
+
+	 <%= f.label :password %>
+     <%= f.password_field :password %>
+
+     <%= f.label :password_confirmation, "Confirmation" %>
+     <%= f.password_field :password_confirmation %>
+
+     <%= f.submit "Update Profile", class: "btn btn-large btn-primary" %>
+
+   <% end %>

@@ -2,6 +2,9 @@
 
 class PictureUploader < CarrierWave::Uploader::Base
 
+  def default_url
+    "/images/" + [version_name, "rails.png"].compact.join('_')
+  end
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
